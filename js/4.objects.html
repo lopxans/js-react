@@ -18,14 +18,24 @@
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    localStorage.removeItem('score')
     ">Reset Score</button>
 
     <script>
-      const score = {
-        wins: 0,
-        losses: 0,
-        ties: 0,
-      };
+      let score = JSON.parse(localStorage.getItem('score')) || {
+            wins : 0,
+            losses : 0,
+            ties : 0
+        }
+    /* 
+      if (!score) {
+        score = {
+            wins : 0,
+            losses : 0,
+            ties : 0
+        }
+      }
+    */
 
       function playGame(playerMove) {
         const computerMove = pickeComputerMove();
@@ -67,6 +77,8 @@
             score.ties += 1;
         }
 
+        localStorage.setItem('score', JSON.stringify(score));
+
         alert(
           `You picked ${playerMove}. Computer picked ${computerMove}. ${result} 
           Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`,
@@ -88,6 +100,37 @@
         return computerMove;
       }
 // ________________________________________________________________________
+
+    //  destructuring shotcut
+    const obj = {
+        message: 'Good job!',
+        price: 799
+    }
+    // const message = obj.message;
+    const {message, price} = obj;
+    console.log(message);
+    console.log(price);
+
+    // sharthand property
+    const obj1 = {
+        // message: message
+        message,
+    }
+    console.log(obj1);
+
+    // shorthand method 
+
+    const obj2 = {
+        message,
+        // method: function function1() {
+        //     console.log('method');
+        // }
+        method() {
+            console.log('method');
+        }
+    }
+    console.log(obj2);
+    obj2.method();
 
 
 
@@ -152,6 +195,25 @@ ____________________________________________________________________
     jsonToJS_object = JSON.parse(objectToJson);
     console.log(jsonToJS_object)
 
+____________________________________________________________________
+      console.log('hello'.length); // lenth of str
+      console.log('hello'.toUpperCase()); // to make capitalize
+
+      const obj1 = {
+        message: 'hello'
+      };
+
+      const obj2 = obj1;
+      obj1.message = 'Good job!';
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: 'Good job!'
+      }
+
+      console.log(obj1===obj2);
+      console.log(obj1===obj3);
 ____________________________________________________________________
 
 
