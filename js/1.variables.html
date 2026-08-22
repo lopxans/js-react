@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Qauntity</title>
+    <style>
+        * {
+            font-family: Arial;
+            margin: 0;
+        }
+        p {
+            margin: 15px;
+            font-weight: bold;
+            font-size: 30px;
+            color: #2c3136;
+        }
+        .show-btn {
+            margin: 0;
+            background-color: #0d6efd;
+            color:white;
+            font-size: 16px;
+            padding: 10px;
+            margin-right: 5px;
+            margin-left: 15px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .show-btn:hover {
+            background-color: #0e4496;
+        }
+        .add-btn {
+            margin: 0;
+            background-color: #198754;
+            color:white;
+            font-size: 16px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .add-btn:hover {
+            opacity: 0.9;
+        }
+        .remove-btn {
+            margin: 0;
+            background-color: #dc3545;
+            color:white;
+            font-size: 16px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            opacity: 0.8;
+        }
+        .reset-btn {
+            margin: 0;
+            background-color: #6c757d;
+            color:white;
+            font-size: 16px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .reset-btn:hover {
+            background-color: transparent;
+            color: #6c757d;
+        }
+
+    </style>
+  </head>
+  <body>
+    <P>Cart Quantity</P>
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQantity}`);
+    " class="show-btn">Show Qantity</button>
+
+    <button onclick="
+        cartQantity += 1;
+        console.log(`Cart Quantity: ${cartQantity}`);
+    " class="add-btn">Add to cart</button>
+
+    <button onclick="
+        cartQantity += 2;
+        console.log(`Cart Quantity: ${cartQantity}`);
+    " class="add-btn">Add +2</button>
+
+    <button onclick="
+        cartQantity += 3;
+        console.log(`Cart Quantity: ${cartQantity}`);
+    " class="add-btn">Add +3</button>
+
+    <button onclick="
+        cartQantity -= 1;
+        console.log(`Remove a cart: ${cartQantity}`);
+    " class="remove-btn">Remove from a Cart</button>
+
+    <button onclick="
+        cartQantity = 0;
+        console.log(`Cart Quantity: ${cartQantity}`);
+    " class="reset-btn">Reset Cart</button>
+
+    <script>
+        let cartQantity = 0;
+    </script>
+  </body>
+</html>

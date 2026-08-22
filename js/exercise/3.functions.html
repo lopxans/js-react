@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise</title>
+</head>
+<body>
+    
+    <script>
+        function greet(name=undefined) {
+            console.log(`Message: Hello ${name}!`);
+        }
+        greet();
+
+        //_______________________________________________________________________
+
+        function convertToFahrenheit(celsius) {
+            const farenheit = (celsius * 9/5) + 32;
+            console.log(`${celsius}C : ${farenheit}F`);
+        }
+        
+        
+        function convertToCelsius(farenheit) {
+            const celsius = (farenheit - 32) * 5/9;
+            console.log(`${farenheit}F : ${celsius}C`);
+        }
+        
+        function convertTemperature(degree, unit) {
+            convertToFahrenheit(degree);
+            convertToCelsius(unit);
+        }
+
+        convertTemperature(25, 86);
+
+    </script>
+</body>
+</html>

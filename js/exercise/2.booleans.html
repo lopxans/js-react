@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    
+    <script>
+        let hour = new Date().getHours();
+        let name = 'Sulav Tamang';
+
+        if (hour >= 6 && hour <= 12){
+            console.log(`Good Morning ${name}!`);
+        }else if(hour >= 13 && hour <= 17) {
+            console.log(`Good Afternoon ${name}!`);
+        }else {
+            console.log(`Good Night ${name}!`);
+        }
+
+
+        // _______________________________________________________________________________________________________________
+
+        let age = 65;
+        const isHoliday = false
+        const message = (age <= 6 || age >= 65) && isHoliday ? `Discount` : `Not discount`;
+        console.log(message);
+
+
+        // _______________________________________________________________________________________________________________
+        let randomNumber = Math.random();
+        let result = '';
+
+        const headAndTails = randomNumber <= 0.5 ? result = 'head' : result = 'tails';
+        console.log(headAndTails);
+
+        let guess = 'head';
+        if (result===guess){
+            console.log('You win.');
+        }else {
+            console.log('You lose.');
+        }
+    </script>
+</body>
+</html>
