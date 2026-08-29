@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button onclick="
+    subscribe();
+  " 
+  class="js-subs-btn">Subscribe</button><br>
+
+  ___________________________________________________________________________________
+  <p>Amazon Shiping Calculator</p>
+  <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    handleCostKeydown(event);
+  ">
+  <button onclick="
+    calculateTotal();
+  "
+  >Calculate</button>
+  <p class="js-total-cost"></p>
+
+    <script>
+      function subscribe() {
+        const btnElement = document.querySelector('.js-subs-btn');
+
+        if(btnElement.innerText === 'Subscribe') {
+          btnElement.innerHTML = 'Subscribed';
+        } else {
+          btnElement.innerHTML = 'Subscribe';
+        }
+      }
+
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+
+        if(cost < 40) {
+          cost += 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+
+      }
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+
+How to used dom
+    // fethch data of title and body of html file using dom
+    console.log(document.title);
+    console.log(document.body);
+    console.log(document.body.innerHTML);
+
+    
+    // change value of body and title
+    document.body.innerHTML = 'hello';
+    document.title = 'Document Object Model';
+
+    // method of dom
+    console.log(document.querySelector('button').innerHTML);
+    
+    // change
+    document.querySelector('button').innerHTML = 'changed';
+    
+    const buttonElement = document.querySelector('.btn-2');
+    console.log(buttonElement);
+
+____________________________________________________________________________
+
+algorithm of projec:
+  when we click the button
+  1. if the text is 'Subscribe' = 'Subscribed'
+  2. Otherwise, change it back = 'Subcribe'
+
+
+
+
+
+
+
+
+    
+-->
