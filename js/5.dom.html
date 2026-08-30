@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .subs-btn {
+        background: black;
+        border: none;
+        border-radius: 18px;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 16px;
+        padding-left: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-btn {
+        background: green;
+        border: none;
+        color: white;
+        font-size: 15px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
 </head>
 <body>
   <p>YouTube Subscribe Button</p>
   <button onclick="
     subscribe();
   " 
-  class="js-subs-btn">Subscribe</button><br>
+  class="js-subs-btn subs-btn">Subscribe</button><br>
 
   ___________________________________________________________________________________
   <p>Amazon Shiping Calculator</p>
-  <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+  <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
     handleCostKeydown(event);
   ">
   <button onclick="
     calculateTotal();
   "
-  >Calculate</button>
+  class="calculate-btn">Calculate</button>
   <p class="js-total-cost"></p>
 
     <script>
@@ -29,8 +65,10 @@
 
         if(btnElement.innerText === 'Subscribe') {
           btnElement.innerHTML = 'Subscribed';
+          btnElement.classList.add('is-subscribed');
         } else {
           btnElement.innerHTML = 'Subscribe';
+          btnElement.classList.remove('is-subscribed')
         }
       }
 
