@@ -1,18 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <title>Arrays and Loops</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/e1.css" />
+  </head>
+  <body>
     <p>Todo List</p>
-    <input placeholder="Todo name" class="input-name">
-    <button onclick="
-        addTodo();
-    ">Add</button>
 
-    <div class="js-todo-list"></div>
+    <div class="todo-input-grid">
+      <input
+        placeholder="Todo name"
+        class="input-name name"
+        onkeydown="handleCostKeydown(event)"
+      />
 
+      <input
+        type="date"
+        class="js-due-date dueDate"
+        onkeydown="handleCostKeydown(event)"
+      />
+      <button onclick="addTodo()" class="btn">Add</button>
+    </div>
+
+
+    <div class="js-todo-list todo-grid"></div>
 
     <script src="scripts/e6.js"></script>
-</body>
-</html> 
+  </body>
+</html>
