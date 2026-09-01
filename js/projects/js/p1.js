@@ -76,6 +76,8 @@ function pickeComputerMove() {
 
   return computerMove;
 }
+
+/* 
 // ________________________________________________________________________
 
 //  destructuring shotcut
@@ -108,3 +110,4 @@ const obj2 = {
 };
 console.log(obj2);
 obj2.method();
+ */
