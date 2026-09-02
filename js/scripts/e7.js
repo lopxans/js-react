@@ -76,6 +76,17 @@ console.log(oneLine());
 
 */
 
+document.querySelector('.js-rock-btn').addEventListener('click',() => {
+  playGame('rock');
+});
+
+document.querySelector('.js-paper-btn').addEventListener('click',() => {
+  playGame('paper');
+});
+
+document.querySelector('.js-scissors-btn').addEventListener('click',() => {
+  playGame('scissors');
+});
 
 
 let score = JSON.parse(localStorage.getItem("score")) || {
@@ -85,6 +96,19 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 };
 
 updateScoreElement();
+
+document.body.addEventListener('keydown', (event)=>{
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  }else if (event.key === 's') {
+    playGame('scissors');
+  }
+});
+
+
+
 
 function playGame(playerMove) {
   const computerMove = pickeComputerMove();
@@ -173,6 +197,3 @@ function autoPlay() {
         isAutoPlaying = false;
     }
 }
-
-const autoPlay = () => {}
-
