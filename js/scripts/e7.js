@@ -57,6 +57,22 @@ setInterval(function() {
 }, 3000);
 console.log('next line 2');
 
+// _____________________________________________________________
+// Arrow Function
+const arrowFunction = () => {
+  console.log('arrow function');
+}
+arrowFunction();
+
+const oneParam =  param => {
+  console.log(param + 1);
+}
+oneParam(2)
+
+// one line funtion 
+const oneLine = () => 2 +3;
+console.log(oneLine());
+
 
 */
 
@@ -157,4 +173,6 @@ function autoPlay() {
         isAutoPlaying = false;
     }
 }
+
+const autoPlay = () => {}
 
